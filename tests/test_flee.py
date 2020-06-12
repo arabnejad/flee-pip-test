@@ -4,7 +4,7 @@ import subprocess
 
 
 def test_fabflee_mali():
-    config_path = "cd %s/FabFlee/config_files/%s;" % (
+    config_path = "%s/FabFlee/config_files/%s" % (
 	    os.environ['TRAVIS_BUILD_DIR'], "mali")
     current_dir = os.getcwd()
     os.chdir(config_path)
