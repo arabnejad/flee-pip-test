@@ -35,7 +35,7 @@ matrix:
         - ls $TRAVIS_BUILD_DIR/flee
         - pip freeze
         - fabsim localhost install_plugin:FabFlee
-        - ssh -t travis@localhost 'pip freeze;'
+        - ssh -t travis@localhost 'pip install numpy pandas mpi4py;'
         #- fabsim localhost flee:mali,simulation_period=50,flee_location=$TRAVIS_BUILD_DIR/flee
 
       script:
