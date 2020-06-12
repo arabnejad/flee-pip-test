@@ -2,7 +2,7 @@ import os
 import sys
 import subprocess
 
-sys.path.insert(0, '%s/FabSim3/base/' %(os.environ['$TRAVIS_BUILD_DIR']))
+sys.path.insert(0, '%s/FabSim3/base/' %(os.environ['TRAVIS_BUILD_DIR']))
 
 from deploy.templates import *
 from deploy.machines import *
