@@ -28,7 +28,7 @@ def test_fabflee_install():
 def test_fabflee_mali():
     cmd = ["fabsim",
 	"localhost",
-	"flee:mali,simulation_period=50,flee_location={0}/flee".format(
+	"flee:mali,simulation_period=50,manual_ssh=false,flee_location={0}/flee".format(
 	    os.environ['TRAVIS_BUILD_DIR'])
 	]
     print(cmd)
