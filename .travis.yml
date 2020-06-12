@@ -28,7 +28,7 @@ matrix:
         - pip install -r requirements.txt
         - sed "s/your-username/`whoami`/g" <<< cat deploy/machines_user_example.yml > deploy/machines_user.yml
         - fab localhost install_plugin:FabFlee
-        - ls FabSim3
+        - ls $TRAVIS_BUILD_DIR/FabSim3
         - cd ..
         - ls .
       script:
