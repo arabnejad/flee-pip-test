@@ -38,7 +38,7 @@ matrix:
         - python --version
         - ssh -t travis@localhost 'python --version;'
         - ssh -t travis@localhost 'python3 --version;'
-        - ssh -t travis@localhost 'pip install numpy pandas mpi4py;'
+        - ssh -t travis@localhost 'pip3 install numpy pandas mpi4py;'
         #- fabsim localhost flee:mali,simulation_period=50,flee_location=$TRAVIS_BUILD_DIR/flee
 
       script:
