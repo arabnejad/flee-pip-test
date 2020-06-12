@@ -30,8 +30,11 @@ matrix:
         - cd $TRAVIS_BUILD_DIR
         - ls $TRAVIS_BUILD_DIR/FabSim3
         - export PATH=$TRAVIS_BUILD_DIR/FabSim3/bin:$PATH
-        - export PYTHONPATH=$TRAVIS_BUILD_DIR/FabSim3:$PYTHONPATH        
+        - export PYTHONPATH=$TRAVIS_BUILD_DIR/FabSim3:$PYTHONPATH
+        - export PYTHONPATH=$TRAVIS_BUILD_DIR/flee:$PYTHONPATH
+        - ls $TRAVIS_BUILD_DIR/flee
         - fabsim localhost install_plugin:FabFlee
+        - fabsim localhost flee:mali,simulation_period=50
         
       script:
         - cd $TRAVIS_BUILD_DIR
