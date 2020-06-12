@@ -26,12 +26,11 @@ def test_fabflee_install():
 
 
 def test_fabflee_mali():
-	cmd = [
-            "fabsim",
-            "localhost",
-            "flee:mali,simulation_period=50" + ",flee_location=" +
-                os.environ['TRAVIS_BUILD_DIR'] + '/flee'
-        ]
+    cmd = ["fabsim",
+	"localhost",
+	"flee:mali,simulation_period=50,,flee_location={0}/flee".format(
+	    os.environ['TRAVIS_BUILD_DIR'])
+	]
     print(cmd)
 
     assert(subprocess.call(cmd) == 0)
