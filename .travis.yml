@@ -32,8 +32,8 @@ matrix:
         - cd ..
         - ls .
       script:
-        - export PATH=~/FabSim3/bin:$PATH
-        - export PYTHONPATH=~/FabSim3:$PYTHONPATH        
+        - export PATH=$TRAVIS_BUILD_DIR/FabSim3/bin:$PATH
+        - export PYTHONPATH=$TRAVIS_BUILD_DIR/FabSim3:$PYTHONPATH        
         - cd .
         - python -m pytest --log-cli-level=10 tests/
 
