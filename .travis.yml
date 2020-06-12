@@ -16,7 +16,7 @@ matrix:
       install:
         - export PYTHONPATH=$TRAVIS_BUILD_DIR/flee:$PYTHONPATH
         - git clone https://github.com/djgroen/FabFlee.git
-        - pip install install numpy pandas mpi4py        
+        - pip install numpy pandas mpi4py        
         #- ls .
         #- pwd
         #- rm -f ~/.ssh/id_rsa
