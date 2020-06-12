@@ -21,7 +21,7 @@ def test_fabflee():
 
 def test_fabflee_install():
     assert(subprocess.call(
-        ["fab", "localhost", "install_plugin:FabFlee"]) == 0)
+        ["fabsim", "localhost", "install_plugin:FabFlee"]) == 0)
 
 
 def test_fabflee_mali():
