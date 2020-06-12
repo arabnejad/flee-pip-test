@@ -19,7 +19,8 @@ def test_fabflee_mali():
     print(cmd)
 
     assert(subprocess.call(cmd) == 0)
-    output = subprocess.check_output(cmd).decode("utf-8")
+    try:
+        output = subprocess.check_output(cmd).decode("utf-8")
     except subprocess.CalledProcessError as e:
         assert("Command '%s' return non-zero exit status: %s" % (" ".join(cmd), e.returncode))
     #assert(output.find('success') >= 0)
