@@ -13,7 +13,8 @@ def test_fabflee_mali():
 	"input_csv",
 	"source_data",
 	"50",
-	"simsetting.csv"
+	"simsetting.csv",
+	"> out.csv"
 	]
     print(cmd)
 
