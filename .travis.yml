@@ -34,8 +34,8 @@ matrix:
         - export PYTHONPATH=$TRAVIS_BUILD_DIR/flee:$PYTHONPATH
         - ls $TRAVIS_BUILD_DIR/flee
         - pip freeze
-        - fabsim localhost install_plugin:FabFlee
-        - fabsim localhost flee:mali,simulation_period=50,flee_location=$TRAVIS_BUILD_DIR/flee
+        #- fabsim localhost install_plugin:FabFlee
+        #- fabsim localhost flee:mali,simulation_period=50,flee_location=$TRAVIS_BUILD_DIR/flee
         
       script:
         - cd $TRAVIS_BUILD_DIR
