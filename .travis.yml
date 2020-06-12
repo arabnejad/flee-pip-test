@@ -14,7 +14,7 @@ matrix:
           - sudo apt-get update -qq && sudo apt-get install -qq $PACKAGES
                   
       install:
-        - export PYTHONPATH=$TRAVIS_BUILD_DIR/flee:$PYTHONPATH
+        - export PYTHONPATH=$TRAVIS_BUILD_DIR:$PYTHONPATH
         - git clone https://github.com/djgroen/FabFlee.git
         - pip install numpy pandas mpi4py        
         #- ls .
