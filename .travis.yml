@@ -1,0 +1,24 @@
+matrix:
+  include:
+    - stage: testing
+      language: python
+      python:
+        - "3.6"
+      install:
+        - rm -f ~/.ssh/id_rsa
+        - ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+        - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+        - chmod og-wx ~/.ssh/authorized_keys
+        - ssh-keyscan -H localhost >> ~/.ssh/known_hosts        
+        - pip install -r requirements.txt
+        - git clone https://github.com/djgroen/FabSim3.git ~/FabSim3
+        - cd ~/FabSim3
+        - pip install -r requirements.txt
+        - sed "s/your-username/`whoami`/g" <<< cat deploy/machines_user_example.yml > deploy/machines_user.yml
+        - fab localhost install_plugin:FabFlee
+      script:
+        - export PATH=~/FabSim3/bin:$PATH
+        - export PATH=~/FabSim3:$PYTHONPATH        
+        - python -m pytest --log-cli-level=10 tests/
+
+
