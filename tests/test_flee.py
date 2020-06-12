@@ -2,7 +2,7 @@ import os
 import sys
 import subprocess
 
-sys.path.insert(0, '~/FabSim3/base/')
+sys.path.insert(0, '%s/FabSim3/base/' %(os.environ['$TRAVIS_BUILD_DIR']))
 
 from deploy.templates import *
 from deploy.machines import *
@@ -20,6 +20,7 @@ def test_fabflee():
 
 
 def test_fabflee_install():
+    print(os.environ['$TRAVIS_BUILD_DIR'])
     assert(subprocess.call(
         ["fabsim", "localhost", "install_plugin:FabFlee"]) == 0)
 
