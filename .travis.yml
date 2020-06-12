@@ -36,6 +36,10 @@ matrix:
         - pip freeze
         - fabsim localhost install_plugin:FabFlee
         #- fabsim localhost flee:mali,simulation_period=50,flee_location=$TRAVIS_BUILD_DIR/flee
+        - whoami
+        - ssh travis@localhost
+        - pip freeze
+        - exit
         
       script:
         - cd $TRAVIS_BUILD_DIR
