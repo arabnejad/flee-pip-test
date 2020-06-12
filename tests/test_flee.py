@@ -20,7 +20,7 @@ def test_fabflee():
 
 
 def test_fabflee_install():
-    print(os.environ['$TRAVIS_BUILD_DIR'])
+    print(os.environ['TRAVIS_BUILD_DIR'])
     assert(subprocess.call(
         ["fabsim", "localhost", "install_plugin:FabFlee"]) == 0)
 
