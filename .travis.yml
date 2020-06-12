@@ -27,14 +27,14 @@ matrix:
         - pwd
         - pip install -r requirements.txt
         - sed "s/your-username/`whoami`/g" <<< cat deploy/machines_user_example.yml > deploy/machines_user.yml
-        - fab localhost install_plugin:FabFlee
+        - cd $TRAVIS_BUILD_DIR
         - ls $TRAVIS_BUILD_DIR/FabSim3
-        - cd ..
-        - ls .
-      script:
         - export PATH=$TRAVIS_BUILD_DIR/FabSim3/bin:$PATH
         - export PYTHONPATH=$TRAVIS_BUILD_DIR/FabSim3:$PYTHONPATH        
-        - cd .
+        - fabsim localhost install_plugin:FabFlee
+        
+      script:
+        - cd $TRAVIS_BUILD_DIR
         - python -m pytest --log-cli-level=10 tests/
 
 
