@@ -4,6 +4,15 @@ matrix:
       language: python
       python:
         - "3.6"
+
+      env:
+          - MPI=mpich
+          - MPI=openmpi
+      before_install:
+          - test $MPI == mpich && PACKAGES='mpich libmpich-dev' || true
+          - test $MPI == openmpi && PACKAGES='openmpi-bin libopenmpi-dev' || true
+          - sudo apt-get update -qq && sudo apt-get install -qq $PACKAGES
+                  
       install:
         - rm -f ~/.ssh/id_rsa
         - ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
