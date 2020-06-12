@@ -25,9 +25,11 @@ matrix:
         - pip install -r requirements.txt
         - sed "s/your-username/`whoami`/g" <<< cat deploy/machines_user_example.yml > deploy/machines_user.yml
         - fab localhost install_plugin:FabFlee
+        - ls ~/FabSim3
+        - ls ~/
       script:
         - export PATH=~/FabSim3/bin:$PATH
-        - export PATH=~/FabSim3:$PYTHONPATH        
+        - export PYTHONPATH=~/FabSim3:$PYTHONPATH        
         - python -m pytest --log-cli-level=10 tests/
 
 
