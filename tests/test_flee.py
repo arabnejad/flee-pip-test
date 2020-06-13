@@ -1,13 +1,13 @@
 import os
 import sys
 import subprocess
-
+import pytest
 
 def test_with_fabflee():
     run_test("mali",50)
 
 
-@fixture
+@pytest.fixture()
 def run_test(config,simulation_period):
     config_path = "%s/FabFlee/config_files/%s" % (
 	    os.environ['TRAVIS_BUILD_DIR'], config)
