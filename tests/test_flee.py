@@ -5,6 +5,8 @@ import pytest
 
 def test_with_fabflee():
     run_test("mali",50)
+    run_test("burundi",50)
+    assert True
 
 
 @pytest.fixture()
