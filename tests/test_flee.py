@@ -4,7 +4,7 @@ import subprocess
 import pytest
 
 
-base = os.path.join(os.environ['TRAVIS_BUILD_DIR'], "FabFlee/config_files","validation/SWEEP")
+base = os.path.join(os.environ['TRAVIS_BUILD_DIR'], "FabFlee/config_files")
 
 
 def test_mali(run_py):
@@ -18,12 +18,12 @@ def test_par_mali(run_par):
 
 
 def test_burundi(run_py):
-    ret = run_py("oldstyle_burundi", "10")
+    ret = run_py("burundi", "10")
     assert ret == "OK"
 
 
 def test_par_burundi(run_par):
-    ret = run_par("oldstyle_burundi", "10", "8")
+    ret = run_par("burundi", "10", "8")
     assert ret == "OK"
 
 
@@ -37,13 +37,13 @@ def test_par_car(run_par):
     assert ret == "OK"
 
 
-def test_ssudan_ccamp(run_py):
-    ret = run_py("ssudan_ccamp", "10")
+def test_ssudan(run_py):
+    ret = run_py("ssudan", "10")
     assert ret == "OK"
 
 
-def test_par_ssudan_ccamp(run_par):
-    ret = run_par("ssudan_ccamp", "10", "8")
+def test_par_ssudan(run_par):
+    ret = run_par("ssudan", "10", "8")
     assert ret == "OK"
 
 
