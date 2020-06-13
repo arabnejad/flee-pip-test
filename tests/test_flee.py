@@ -3,16 +3,21 @@ import sys
 import subprocess
 
 
-def test_fabflee_mali():
+def test_with_fabflee():
+    run_test("mali",50)
+
+
+@fixture
+def run_test(config,simulation_period):
     config_path = "%s/FabFlee/config_files/%s" % (
-	    os.environ['TRAVIS_BUILD_DIR'], "mali")
+	    os.environ['TRAVIS_BUILD_DIR'], config)
     current_dir = os.getcwd()
     os.chdir(config_path)
     cmd = ["python3",
 	"run.py",
 	"input_csv",
 	"source_data",
-	"50",
+	simulation_period,
 	"simsetting.csv",
 	"> out.csv"
 	]
